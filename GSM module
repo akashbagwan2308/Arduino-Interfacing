@@ -1,0 +1,15 @@
+/*
+GSM_MODULE_CALL
+*/
+
+void setup() 
+{
+ Serial.begin(9600);
+ Serial.println("ATD+919171388527;");
+ delay(1000);
+}
+
+void loop() 
+{
+
+}
