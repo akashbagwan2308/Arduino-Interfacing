@@ -1,0 +1,16 @@
+/*
+EEPROM_BASIC_PROGRAM
+*/
+#include <EEPROM.h>
+void setup() {
+    Serial.begin(9600);
+    EEPROM.Write(0,255); // String 255 at 0
+    delay(1000);
+   
+   int val =EEPROM.read(0); //Reading data at 0
+   Serial.println(val);
+}
+
+void loop() {
+    
+}
