@@ -1,0 +1,20 @@
+/*
+ir sensor interfacing
+first we have to check ie our ir sensor is Acive High or Active low
+if it sends 1 on detecting object then it is Active High Sensor
+and if it sends 0 on detecting object then it is Active Low Sensor
+*/
+
+#define ir 8
+ 
+void setup() {
+    pinMode(ir,INPUT);
+    Serial.begin(9600);
+}
+
+void loop() {
+    int val = digitalRead(ir);
+    Serial.print("Value = ");
+    Serial.println(val);
+    delay(1000);
+}
