@@ -1,0 +1,14 @@
+/*
+GSM_MODULE_REDIAL
+*/
+
+void setup() 
+{
+  Serial.begin(9600);
+  Serial.println("ATDL");
+}
+
+void loop() 
+{
+
+}
