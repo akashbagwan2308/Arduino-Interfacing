@@ -1,0 +1,20 @@
+/*
+ turnig on led using push button
+ led at pin 13
+ push button at pin
+*/
+
+void setup() {
+    pinMode(12,INPUT_PULLUP);
+    pinMode(13,OUTPUT);
+    Serial.begin(9600);
+}
+
+void loop() {
+    int val = digitalRead(12);
+    Serial.print(val);
+    if(val==0)
+    { pinmode(13, HIGH);}
+    else
+    { pinmode(13, LOW); }
+}
