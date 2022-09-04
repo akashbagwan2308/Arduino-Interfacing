@@ -1,0 +1,49 @@
+/*
+GSM_MODULE_TO_RECEIVE_MESSAGE
+*/
+
+char str[15];
+int i = 0; 
+
+//Message Example: #Hello World*
+
+void setup() 
+{
+  Serial.begin(9600);
+  Serial.println("AT+CNMI=2,2,0,0,0");
+  delay(2000);
+  Serial.println("AT+CMGF=1");
+  delay(1000);
+}
+
+void loop() 
+{
+i = 0;
+delay(1000);
+}
+
+void serialEvent() 
+{
+  while(Serial.available()) 
+  {
+    if(Serial.find("#"))
+    {
+      delay(1000);
+      while (Serial.available()) 
+      {
+        char inChar=Serial.read();
+        str[i++]=inChar;
+        if(inChar=='*')
+        {
+          Serial.println((String)str);
+          return;
+        } 
+       } 
+     }
+   }
+
+ }
+ 
+ 
+ 
+ 
